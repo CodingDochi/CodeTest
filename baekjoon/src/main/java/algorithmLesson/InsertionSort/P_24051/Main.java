@@ -9,6 +9,8 @@ public class Main {
     private int N;
     private int K;
 
+    private StringBuilder sb = new StringBuilder();
+
     private void insertionSort(int[] arr) {
 
         // 실제 저장 횟수
@@ -25,7 +27,10 @@ public class Main {
 
                 cnt = cnt + 1;
                 if (cnt == K) {
-                    System.out.println(arr[loc+1]);
+                    for (int elem : arr) {
+                        sb.append(elem).append(" ");
+                    }
+                    System.out.println(sb);
                     return;
                 }
             }
@@ -35,7 +40,10 @@ public class Main {
 
                 cnt = cnt + 1;
                 if (cnt == K) {
-                    System.out.println(arr[loc+1]);
+                    for (int elem : arr) {
+                        sb.append(elem).append(" ");
+                    }
+                    System.out.println(sb);
                     return;
                 }
             }
