@@ -1,4 +1,4 @@
-package algorithmLesson.InsertionSort.P_24051;
+package algorithmLesson.insertionSort.P_24051;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
