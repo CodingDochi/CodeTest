@@ -1,10 +1,12 @@
-package algorithmLesson.select.P_24398;
+package algorithmLesson.select.P_24399;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
 public class Main {
+
+    private StringBuilder sb = new StringBuilder();
 
     private int change_limit;
     private int change_cnt;
@@ -30,7 +32,10 @@ public class Main {
                 arr[j] = tmp;
                 change_cnt++;
                 if (change_cnt == change_limit) {
-                    System.out.println(arr[i]+" "+arr[j]);
+                    for (int z=1; z<arr.length; z++) {
+                        sb.append(arr[z]).append(" ");
+                    }
+                    System.out.println(sb);
                 }
             }
         }
@@ -44,7 +49,10 @@ public class Main {
             arr[end_idx] = tmp;
             change_cnt++;
             if (change_cnt == change_limit) {
-                System.out.println(arr[i+1]+" "+arr[end_idx]);
+                for (int z=1; z<arr.length; z++) {
+                    sb.append(arr[z]).append(" ");
+                }
+                System.out.println(sb);
             }
         }
 
@@ -84,14 +92,14 @@ public class Main {
             if (change_cnt < change_limit) {
                 System.out.println(-1);
             }
-                // 마지막 정렬 인덱스에 위치한 값(x 였던 것) 반환
-                return arr[t];
-            }
-            // 목표 값이 우측 k 번째 값 보다 크다면,
-            // 마지막 정렬 작업의 종료 지점보다 1 큰 인덱스(x보다 컸던 첫번째 값)에서부터 선택 작업 재시작
-            // 단, 목표값은 이전 정렬 작업의 목표값에서 직전 정렬의 가장 우측 인덱스에 위치한 값을 차감한 값이다.
-            else return select(arr, t + 1, end_idx, small_qth - small_kth);
+            // 마지막 정렬 인덱스에 위치한 값(x 였던 것) 반환
+            return arr[t];
         }
+        // 목표 값이 우측 k 번째 값 보다 크다면,
+        // 마지막 정렬 작업의 종료 지점보다 1 큰 인덱스(x보다 컸던 첫번째 값)에서부터 선택 작업 재시작
+        // 단, 목표값은 이전 정렬 작업의 목표값에서 직전 정렬의 가장 우측 인덱스에 위치한 값을 차감한 값이다.
+        else return select(arr, t + 1, end_idx, small_qth - small_kth);
+    }
 
 
     private void solution() throws Exception {
@@ -113,6 +121,6 @@ public class Main {
     }
 
     public static void main(String[] args) throws Exception {
-    new Main().solution();
+        new Main().solution();
     }
 }
