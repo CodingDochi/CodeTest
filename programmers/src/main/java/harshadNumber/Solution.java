@@ -1,4 +1,4 @@
-package hashadNumber;
+package harshadNumber;
 
 class Solution {
     public boolean solution(int x) {

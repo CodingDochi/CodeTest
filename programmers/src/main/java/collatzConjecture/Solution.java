@@ -1,4 +1,4 @@
-package colatz;
+package collatzConjecture;
 
 class Solution {
     private int makeNumber(long res) {
