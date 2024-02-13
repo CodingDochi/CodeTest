@@ -1,4 +1,4 @@
-package algorithmLesson.matrixpath.P_24418;
+package algorithmLesson.matrixPath.P_24418;
 
 import java.io.BufferedReader;
 import java.io.IOException;
