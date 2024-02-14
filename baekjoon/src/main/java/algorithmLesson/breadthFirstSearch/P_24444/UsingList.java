@@ -4,25 +4,25 @@ import java.util.*;
 import java.io.*;
 
 public class UsingList {
-    static int n, m, r;
-    static int[] ch;
-    static ArrayList<ArrayList<Integer>> list;
+    static int N, M, R;
+    static int[] visited;
+    static ArrayList<ArrayList<Integer>> E;
 
-    public static void bfs(int r){
-        Queue<Integer> q = new LinkedList<>();
-        q.offer(r);
+    public static void bfs(int R){
+        Queue<Integer> vertex_visit = new LinkedList<>();
+        vertex_visit.offer(R);
         int cnt = 1;
-        ch[r] = 1;
+        visited[R] = 1;
 
-        while(!q.isEmpty()){
-            int cur = q.poll();
-            Collections.sort(list.get(cur));
+        while(!vertex_visit.isEmpty()){
+            int cur = vertex_visit.poll();
+            Collections.sort(E.get(cur));
 
-            for(int i : list.get(cur)){
-                if(ch[i] == 0){
+            for(int i : E.get(cur)){
+                if(visited[i] == 0){
                     cnt++;
-                    ch[i] = cnt;
-                    q.offer(i);
+                    visited[i] = cnt;
+                    vertex_visit.offer(i);
                 }
             }
         }
@@ -33,32 +33,32 @@ public class UsingList {
         StringTokenizer st = new StringTokenizer(br.readLine());
         StringBuilder sb = new StringBuilder();
 
-        int n = Integer.parseInt(st.nextToken());
-        int m = Integer.parseInt(st.nextToken());
-        int r = Integer.parseInt(st.nextToken());
+        N = Integer.parseInt(st.nextToken());
+        M = Integer.parseInt(st.nextToken());
+        R = Integer.parseInt(st.nextToken());
 
-        ch = new int[n+1];
-        list = new ArrayList<>();
+        visited = new int[N+1];
+        E = new ArrayList<>();
 
-        for(int i = 0; i <= n; i++){
-            list.add(new ArrayList<Integer>());
+        for(int i = 0; i <= N; i++){
+            E.add(new ArrayList<Integer>());
         }
 
-        for(int i = 0; i < m; i++){
+        for(int i = 0; i < M; i++){
             String line = br.readLine();
             String[] split = line.split(" ");
 
             int n1 = Integer.parseInt(split[0]);
             int n2 = Integer.parseInt(split[1]);
 
-            list.get(n1).add(n2);
-            list.get(n2).add(n1);
+            E.get(n1).add(n2);
+            E.get(n2).add(n1);
         }
 
-        bfs(r);
+        bfs(R);
 
-        for(int i = 1; i <= n; i++){
-            sb.append(ch[i]).append('\n');
+        for(int i = 1; i <= N; i++){
+            sb.append(visited[i]).append('\n');
         }
 
         System.out.println(sb);
