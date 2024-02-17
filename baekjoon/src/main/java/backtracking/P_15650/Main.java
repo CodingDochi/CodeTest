@@ -41,7 +41,6 @@ public class Main {
 
         base = new ArrayList<>();
 
-
         dfs(1, 0);
         System.out.println(sb);
     }
