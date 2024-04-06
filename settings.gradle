@@ -3,4 +3,5 @@ rootProject.name = 'CodeTest'
 include 'baekjoon'
 include 'programmers'
 include 'dongbinbook'
+include 'codewars'
 

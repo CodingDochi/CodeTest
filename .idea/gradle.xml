@@ -12,6 +12,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/baekjoon" />
+            <option value="$PROJECT_DIR$/codewars" />
             <option value="$PROJECT_DIR$/dongbinbook" />
             <option value="$PROJECT_DIR$/programmers" />
           </set>
