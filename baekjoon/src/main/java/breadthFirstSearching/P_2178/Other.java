@@ -1,4 +1,4 @@
-package breadthFirstSearching.P_2718;
+package breadthFirstSearching.P_2178;
 
 import java.io.BufferedReader;
 import java.io.IOException;
