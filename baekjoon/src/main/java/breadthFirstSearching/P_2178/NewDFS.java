@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
   /* maze[0][0] 에서 출발하여 maze[N-1][M-1]에 도착하는 경로 중 최소 이동
-    모든 블럭이 1이라고 가정
+
     maze[N-1][M-1] 에 이르는 최소 이동을 n 이라고 할 때,
     인접 블록인 maze[N-1][M-2], maze[N-2][M-1]에 이르는 최소 이동은 n-1 이다.
     maze[N-1][M-2]의 인접블록인 maze[N-1][M-3], maze[N-2][M-2]에 이르는 최소 이동은 n-2이다.
@@ -25,7 +25,7 @@ import java.util.StringTokenizer;
     만약 현재 저장하려는 count가 dp에 이미 저장되어 있는 값보다 크다면 이동을 중지한다.
 
     이 문제는 항상 도착위치로 이동할 수 있는 경우만 입력으로 주어지는 조건이므로 도착 위치에 도달할 수 없는 경우는 생각하지 않아도 된다.
-
+    return과 인풋을 명시하자
      */
 
 public class NewDFS {
